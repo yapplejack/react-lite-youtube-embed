@@ -56,7 +56,7 @@ function LiteYouTubeEmbedComponent(props: LiteYouTubeProps, ref: React.Ref<HTMLI
     ? "https://www.youtube.com"
     : "https://www.youtube-nocookie.com";
 
-  const iframeSrc = props.playlist && `${ytUrl}/embed/videoseries?autoplay=1${mutedImp}&list=${videoId}${paramsImp}` || props.clip && `${ytUrl}/embed/${videoId}?{ mutedImp }${paramsImp}` || `${ytUrl}/embed/${videoId}?autoplay=1&state=1${mutedImp}${paramsImp}`;
+  const iframeSrc = props.playlist && `${ytUrl}/embed/videoseries?autoplay=1${mutedImp}&list=${videoId}${paramsImp}` || props.clip && `${ytUrl}/embed/${videoId}?${mutedImp}${paramsImp}` || `${ytUrl}/embed/${videoId}?autoplay=1&state=1${mutedImp}${paramsImp}`;
   const activatedClassImp = props.activatedClass || "lyt-activated";
   const adNetworkImp = props.adNetwork || false;
   const aspectHeight = props.aspectHeight || 9;
