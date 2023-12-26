@@ -1,6 +1,6 @@
 {
   "name": "@yapplejack/react-lite-youtube-embed",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A private by default, faster and cleaner YouTube embed component for React applications",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
