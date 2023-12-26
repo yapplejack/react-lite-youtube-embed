@@ -10,8 +10,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.package-lock.json
 
 .github
+.git
 
 CODE_OF_CONDUCT.md
 src

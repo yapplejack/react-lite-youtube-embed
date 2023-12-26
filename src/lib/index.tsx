@@ -15,6 +15,7 @@ export interface LiteYouTubeProps {
   adNetwork?: boolean;
   aspectHeight?: number;
   aspectWidth?: number;
+  clip?: boolean;
   iframeClass?: string;
   noCookie?: boolean;
   cookie?: boolean;
@@ -44,8 +45,8 @@ function LiteYouTubeEmbedComponent(props: LiteYouTubeProps, ref: React.Ref<HTMLI
   const announceWatch = props.announce || "Watch";
   const format = props.webp ? 'webp' : 'jpg';
   const vi = props.webp ? 'vi_webp' : 'vi';
-  const posterUrl = props.thumbnail || (!props.playlist 
-    ? `https://i.ytimg.com/${vi}/${videoId}/${posterImp}.${format}` 
+  const posterUrl = props.thumbnail || (!props.playlist
+    ? `https://i.ytimg.com/${vi}/${videoId}/${posterImp}.${format}`
     : `https://i.ytimg.com/${vi}/${videoPlaylisCovertId}/${posterImp}.${format}`);
 
   let ytUrl = props.noCookie
@@ -55,10 +56,7 @@ function LiteYouTubeEmbedComponent(props: LiteYouTubeProps, ref: React.Ref<HTMLI
     ? "https://www.youtube.com"
     : "https://www.youtube-nocookie.com";
 
-  const iframeSrc = !props.playlist
-    ? `${ytUrl}/embed/${videoId}?autoplay=1&state=1${mutedImp}${paramsImp}`
-    : `${ytUrl}/embed/videoseries?autoplay=1${mutedImp}&list=${videoId}${paramsImp}`;
-
+  const iframeSrc = props.playlist && `${ytUrl}/embed/videoseries?autoplay=1${mutedImp}&list=${videoId}${paramsImp}` || props.clip && `${ytUrl}/embed/${videoId}?{ mutedImp }${paramsImp}` || `${ytUrl}/embed/${videoId}?autoplay=1&state=1${mutedImp}${paramsImp}`;
   const activatedClassImp = props.activatedClass || "lyt-activated";
   const adNetworkImp = props.adNetwork || false;
   const aspectHeight = props.aspectHeight || 9;

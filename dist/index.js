@@ -1,6 +1,6 @@
 /**
-* react-lite-youtube-embed v2.4.0
-*  https://github.com/ibrahimcesar/react-lite-youtube-embed.git
+* @yapplejack/react-lite-youtube-embed v0.0.1
+*  https://github.com/yapplejack/react-lite-youtube-embed.git
 *
 *  Copyright (c) Ibrahim Cesar < email@ibrahimcesar.com > and project contributors.
 *
@@ -82,9 +82,7 @@ function LiteYouTubeEmbedComponent(props, ref) {
     ytUrl = props.cookie
         ? "https://www.youtube.com"
         : "https://www.youtube-nocookie.com";
-    var iframeSrc = !props.playlist
-        ? "".concat(ytUrl, "/embed/").concat(videoId, "?autoplay=1&state=1").concat(mutedImp).concat(paramsImp)
-        : "".concat(ytUrl, "/embed/videoseries?autoplay=1").concat(mutedImp, "&list=").concat(videoId).concat(paramsImp);
+    var iframeSrc = props.playlist && "".concat(ytUrl, "/embed/videoseries?autoplay=1").concat(mutedImp, "&list=").concat(videoId).concat(paramsImp) || props.clip && "".concat(ytUrl, "/embed/").concat(videoId, "?{ mutedImp }").concat(paramsImp) || "".concat(ytUrl, "/embed/").concat(videoId, "?autoplay=1&state=1").concat(mutedImp).concat(paramsImp);
     var activatedClassImp = props.activatedClass || "lyt-activated";
     var adNetworkImp = props.adNetwork || false;
     var aspectHeight = props.aspectHeight || 9;

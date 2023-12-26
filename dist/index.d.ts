@@ -8,6 +8,7 @@ export interface LiteYouTubeProps {
     adNetwork?: boolean;
     aspectHeight?: number;
     aspectWidth?: number;
+    clip?: boolean;
     iframeClass?: string;
     noCookie?: boolean;
     cookie?: boolean;
