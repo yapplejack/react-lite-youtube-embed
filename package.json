@@ -1,6 +1,6 @@
 {
   "name": "@yapplejack/react-lite-youtube-embed",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A private by default, faster and cleaner YouTube embed component for React applications",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -11,6 +11,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/yapplejack/react-lite-youtube-embed.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "author": {
     "name": "Ibrahim Cesar",
